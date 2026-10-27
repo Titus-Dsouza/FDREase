@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICTE Official Dashboard — FDREase</title>
+    <meta name="description" content="Review FDR submissions, inspect documents, and record official decisions.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="light-theme">
+
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">🏛️ FDREase</a></div>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../dashboard/index.html">Institution</a></li>
+            <li><a href="dashboard.html" class="active">Official</a></li>
+        </ul>
+        <div class="nav-right">
+            <span id="nav-user" style="font-size:0.85rem;color:var(--text-secondary);display:none;"></span>
+            <button id="theme-toggle" class="btn theme-btn" aria-label="Toggle theme">🌙 Dark</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <section class="official-section">
+            <h1>AICTE Official Dashboard</h1>
+
+            <div class="demo-banner">📌 Demo Mode — Review actions update status locally. No backend is connected.</div>
+
+            <!-- Overview Stats -->
+            <div class="stats-overview" id="official-stats">
+                <!-- rendered by JS -->
+            </div>
+
+            <!-- Filter & Search Bar -->
+            <div class="filter-bar">
+                <label for="status-filter">Filter:</label>
+                <select id="status-filter">
+                    <option value="All">All Statuses</option>
+                    <option value="Draft">Draft</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Under Review">Under Review</option>
+                    <option value="Correction Required">Correction Required</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" placeholder="Institution name or FDR #">
+            </div>
+
+            <!-- Applications Table -->
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Institution</th>
+                            <th>FDR #</th>
+                            <th>Amount</th>
+                            <th class="maturity-col">Maturity</th>
+                            <th>Document</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="official-table-body">
+                        <!-- rows rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; <span class="current-year">2026</span> FDREase — AICTE FDR Portal | SIH Project</p>
+            <small>This is a prototype. Simulated services are clearly labelled.</small>
+        </footer>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

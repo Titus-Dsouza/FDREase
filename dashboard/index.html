@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institution Dashboard — FDREase</title>
+    <meta name="description" content="Submit FDR documents, track applications, and manage corrections.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="light-theme">
+
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">🏛️ FDREase</a></div>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html" class="active">Institution</a></li>
+            <li><a href="../official/dashboard.html">Official</a></li>
+        </ul>
+        <div class="nav-right">
+            <span id="nav-user" style="font-size:0.85rem;color:var(--text-secondary);display:none;"></span>
+            <button id="theme-toggle" class="btn theme-btn" aria-label="Toggle theme">🌙 Dark</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <section class="institution-section">
+            <h1>Institution Dashboard</h1>
+
+            <div class="demo-banner">📌 Demo Mode — Sample data is pre-loaded for demonstration. Submitted records are stored in your browser.</div>
+
+            <!-- Overview Stats -->
+            <div class="stats-overview" id="inst-stats">
+                <!-- rendered by JS -->
+            </div>
+
+            <!-- FDR Submission Form -->
+            <h2>Submit New FDR</h2>
+            <form id="fdr-form" novalidate>
+                <div class="form-group">
+                    <label for="inst-name">Authenticated Institution</label>
+                    <input type="text" id="inst-name" name="inst-name" value="XYZ Institute" readonly class="input-readonly">
+                    <small style="display:block;margin-top:0.3rem;font-size:0.8rem;color:var(--text-muted);">Institution identity is derived from your authenticated account and cannot be modified.</small>
+                </div>
+                <div class="form-group">
+                    <label for="fdr-number">FDR Number *</label>
+                    <input type="text" id="fdr-number" name="fdr-number" placeholder="e.g. FDR-2025-007" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (₹) *</label>
+                    <input type="number" id="amount" name="amount" min="1" step="any" placeholder="e.g. 2500000" required>
+                </div>
+                <div class="form-group">
+                    <label for="maturity-date">Maturity Date *</label>
+                    <input type="date" id="maturity-date" name="maturity-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="doc-file">Upload FDR Document (PDF, JPG, PNG) *</label>
+                    <input type="file" id="doc-file" name="doc-file" accept=".pdf,.png,.jpg,.jpeg" required>
+                    <div id="file-label" style="margin-top:0.4rem; font-size:0.88rem; color:var(--text-muted);">No file selected</div>
+                </div>
+                <button type="submit" class="btn">Submit FDR</button>
+            </form>
+        </section>
+
+        <section class="history-section">
+            <h2>Submission History</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Institution</th>
+                            <th>FDR #</th>
+                            <th>Amount</th>
+                            <th class="maturity-col">Maturity</th>
+                            <th>Document</th>
+                            <th>Status</th>
+                            <th>Action / Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-table">
+                        <!-- rows rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; <span class="current-year">2026</span> FDREase — AICTE FDR Portal | SIH Project</p>
+            <small>This is a prototype. Simulated services are clearly labelled.</small>
+        </footer>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
