@@ -1,11 +1,19 @@
 # Phase.md — AICTE FDR Portal
 
 ## Phase 1: Frontend UI
+<<<<<<< HEAD
 - [x] Build a simple, responsive website.
 - [x] Create Institution and AICTE Official dashboards.
 - [x] Add FDR submission form, document upload, and status screens.
 - [x] Use clearly labelled demo data.
 - [x] Test navigation and UI.
+=======
+- [ ] Build a simple, responsive website.
+- [ ] Create Institution and AICTE Official dashboards.
+- [ ] Add FDR submission form, document upload, and status screens.
+- [ ] Use clearly labelled demo data.
+- [ ] Test navigation and UI.
+>>>>>>> 76b4d6fad915896b77f6264bd5e44732dd53ed4a
 
 ## Phase 2: Backend
 - [ ] Set up Django and Django REST Framework.
